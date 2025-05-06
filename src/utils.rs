@@ -27,5 +27,5 @@ where
     let numerator = f64::from_str(s[0]).map_err(de::Error::custom)?;
     let denominator = f64::from_str(s[1]).map_err(de::Error::custom)?;
 
-    return Ok(numerator / denominator);
+    Ok(numerator / denominator)
 }

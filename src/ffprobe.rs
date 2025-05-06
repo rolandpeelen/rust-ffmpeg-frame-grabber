@@ -104,7 +104,7 @@ impl FFProbeOutput {
 
         let mut cmd =
             Command::new(ffprobe_path.map_or("ffprobe".to_owned(), |p| p.to_string_lossy().into()))
-                .args(&[
+                .args([
                     "-v",
                     "error",
                     "-show_entries",
@@ -133,6 +133,7 @@ impl FFProbeOutput {
     }
 }
 
+#[allow(dead_code)]
 #[derive(Deserialize, Debug)]
 struct FFProbeStreamInfo {
     codec_name: String,
@@ -149,6 +150,7 @@ struct FFProbeStreamInfo {
     nb_frames: u64,
 }
 
+#[allow(dead_code)]
 #[derive(Deserialize, Debug)]
 struct FFProbeFormat {
     #[serde(deserialize_with = "from_str")]
